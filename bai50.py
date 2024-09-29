@@ -1,29 +1,19 @@
-def kiem_tra_so(n):
-  """Kiểm tra số nhập vào và trả về giá trị tương ứng
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Sep 29 11:03:57 2024
 
-  Args:
-    n: Số cần kiểm tra
+@author: Huỳnh Như Ngọc
+"""
 
-  Returns:
-    -1: Nếu n là số âm lẻ
-    1:  Nếu n là số dương chẵn
-    0:  Trong các trường hợp khác
-  """
+# Viết phương thức kiểm tra một số nhập vào: nếu là số âm có giá trị lẻ thì 
+#trả về -1, nếu là số dương có giá trị chẵn thì trả về 1, trường hợp khác trả
+#về 0
 
-  if n < 0 and n % 2 != 0:
-    return -1
-  elif n > 0 and n % 2 == 0:
-    return 1
-  else:
-    return 0
+number = int(input("Nhập một số nguyên: "))
 
-
-so = int(input("Nhập một số nguyên: "))
-ket_qua = kiem_tra_so(so)
-
-if ket_qua == -1:
-  print("Số đã nhập là số âm lẻ.")
-elif ket_qua == 1:
-  print("Số đã nhập là số dương chẵn.")
+if number < 0 and number % 2 != 0:
+            print(-1)
+elif number > 0 and number % 2 == 0:
+            print(1)
 else:
-  print("Số đã nhập không phải là số âm lẻ hoặc số dương chẵn.")
+            print(0)

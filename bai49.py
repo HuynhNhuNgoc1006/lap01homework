@@ -1,19 +1,16 @@
-def la_so_chan_am(n):
-  """Kiểm tra xem một số có phải là số chẵn âm hay không
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Sep 29 11:03:03 2024
 
-  Args:
-    n: Số cần kiểm tra
+@author: Huỳnh Như Ngọc
+"""
 
-  Returns:
-    True: Nếu n là số chẵn âm
-    False: Nếu n không phải là số chẵn âm
-  """
+# Viết phương thức kiểm tra một số nhập vào là số chẵn có giá trị âm. Đúng 
+#trả về true. Sai trả về false.
 
-  return n < 0 and n % 2 == 0
+number = int(input("Nhập một số nguyên: "))
 
-# Ví dụ sử dụng:
-so = int(input("Nhập một số nguyên: "))
-if la_so_chan_am(so):
-  print("Số đã nhập là số chẵn âm.")
+if number % 2 == 0 and number < 0:
+    print("true")
 else:
-  print("Số đã nhập không phải là số chẵn âm.")
+    print("false")
