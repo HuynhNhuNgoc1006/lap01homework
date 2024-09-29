@@ -1,21 +1,16 @@
-def tim_nghiem(x, y, z, target):
-    """
-    Hàm đệ quy tìm kiếm nghiệm
-    x, y, z: Giá trị hiện tại của các biến
-    target: Giá trị đích (979)
-    """
-    if 2*x + 7*y + 9*z == target:
-        print(f"Nghiệm: x = {x}, y = {y}, z = {z}")
-    if 2*x + 7*y + 9*z < target:
-        for i in range(x+1, target//2+1):
-            tim_nghiem(i, y, z, target)
-        for j in range(y+1, (target-2*x)//7+1):
-            tim_nghiem(x, j, z, target)
-        for k in range(z+1, (target-2*x-7*y)//9+1):
-            tim_nghiem(x, y, k, target)
+#*Viết chương trình liệt kê tất cả bọ nghiệm nguyên của phương trình sau:
+    # 2x+7y+9z=979 với (x,y,z > 0)
+    
+# 2*x + 7*1 + 9*1 = 979 => X = (979 - (7/9))/2 = 488.5 (490)
+# 2*1 + 7*y + 9*1 = 979 > y = (979 - (2+9))/7 = 138.5 (140)
+# 2*1 + 7*1 + 9*z = 979 > z (979 - (2+7))/9 = 108 (109-110)
 
-# Giá trị đích
-target = 979
-
-# Khởi tạo tìm kiếm từ x = 1, y = 1, z = 1
-tim_nghiem(1, 1, 1, target)
+bo_nghiem = []
+for i in range(1,490):
+    for y in range(1,140):
+        for z in range(1,109):
+            x = (979 - 7*y - 9*z)//2
+            if x > 0:
+                bo_nghiem += [(x,y,z)]
+if bo_nghiem:
+    print(f' {bo_nghiem}')               
